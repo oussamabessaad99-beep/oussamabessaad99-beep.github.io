@@ -64,6 +64,9 @@ a.card:hover,a.card:focus-visible{border-color:var(--accent);transform:translate
 .card .soon{font:500 12px var(--mono);color:var(--muted)}
 .page-title{font:800 clamp(28px,5vw,40px)/1.1 var(--display)!important;margin:0;text-wrap:balance}
 @media (prefers-reduced-motion:reduce){.card{transition:none}a.card:hover{transform:none}}
+h2.sec{margin:28px 0 0;font:800 22px/1.2 var(--display);letter-spacing:0;text-transform:none;color:var(--fg)}
+.fig.wide{margin-top:8px}
+.fig.wide img{aspect-ratio:auto;object-fit:contain}
 </style>
 </head>
 <body>
@@ -75,9 +78,14 @@ a.card:hover,a.card:focus-visible{border-color:var(--accent);transform:translate
     <article class="item" style="border-top:0">
       <h1 class="page-title">See &amp; Spray on a CASE IH commercial sprayer</h1>
       <p>Mounted and commissioned a camera-based spot-spraying system on a CASE IH commercial boom sprayer: cameras, industrial computers, CAN modules and rate-controller hardware across a 60-nozzle boom.</p>
-      <div class="tags"><span>ISOBUS</span><span>CAN bus</span><span>Machine vision</span><span>Raven</span><span>GPS RTK</span></div>
+      <div class="tags"><span>ISOBUS</span><span>CAN bus</span><span>Machine vision</span><span>Raven</span><span>GPS RTK</span><span>OAK-D cameras</span></div>
       <p><strong>Full-system ownership:</strong> took charge of the complete See &amp; Spray experiment, from mounting and wiring the hardware to commissioning the machine vision and rate-control chain, running the field trials and troubleshooting on site.</p>
       <video class="clip" src="see-spray-experiment.mp4" controls muted playsinline preload="metadata"></video>
+      <h2 class="sec">System architecture</h2>
+      <figure class="fig wide">
+        <img src="see-spray-architecture.jpg" alt="CASE IH sprayer with a Machine Vision Node on its ISOBUS network linked to a machine vision computer, and OAK-D cameras spaced along the commercial boom above the nozzles" loading="lazy">
+        <figcaption><b>Vision on the implement bus.</b> A Machine Vision Node joins the sprayer's existing ISOBUS network (VT, GNSS, task controller and other ECUs) and links to the machine vision computer. OAK-D cameras spaced along the commercial boom each watch a section of nozzles, so weeds are detected and sprayed nozzle by nozzle.</figcaption>
+      </figure>
       <figure class="field">
         <video src="MicrosoftTeams-video%20(13).mp4" controls muted playsinline loop preload="metadata"></video>
         <figcaption><b>Field office.</b> Sometimes last-minute surprises before an experiment force you to code, debug and troubleshoot right in the field: on top of a sprayer, on a rock… any place can be turned into an office 😅</figcaption>
