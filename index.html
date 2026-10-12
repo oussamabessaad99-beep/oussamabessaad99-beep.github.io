@@ -64,6 +64,10 @@ a.card:hover,a.card:focus-visible{border-color:var(--accent);transform:translate
 .card .soon{font:500 12px var(--mono);color:var(--muted)}
 .page-title{font:800 clamp(28px,5vw,40px)/1.1 var(--display)!important;margin:0;text-wrap:balance}
 @media (prefers-reduced-motion:reduce){.card{transition:none}a.card:hover{transform:none}}
+.conf-media{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px}
+.conf-media img,.conf-media video{width:100%;height:300px;object-fit:cover;display:block;background:#000;border:1px solid var(--line)}
+.conf-media video{object-fit:contain}
+.conf-media.single{grid-template-columns:minmax(0,320px)}
 </style>
 </head>
 <body>
@@ -124,6 +128,36 @@ a.card:hover,a.card:focus-visible{border-color:var(--accent);transform:translate
         </div>
       </div>
     </div>
+  </section>
+
+  <section>
+    <h2>Agricultural conferences &amp; seminars</h2>
+    <article class="item">
+      <h3>ASABE Annual International Meeting</h3>
+      <span class="meta">American Society of Agricultural and Biological Engineers · 2025</span>
+      <p>Presented my work on machine vision-based spot spraying for agricultural machinery: camera detections driving individual nozzle control over ISOBUS on a field sprayer.</p>
+      <div class="conf-media single">
+        <img src="conf-asabe.jpg" alt="Oussama presenting a slide on boom sprayers at the ASABE meeting" loading="lazy">
+      </div>
+    </article>
+    <article class="item">
+      <h3>CSBE-SCGAB Annual Technical Conference</h3>
+      <span class="meta">Canadian Society for Bioengineering · Saskatoon, SK · July 2026</span>
+      <p>Presented the latest results of the See &amp; Spray project: machine vision spot spraying and feedback map generation on a commercial sprayer.</p>
+      <div class="conf-media">
+        <img src="conf-csbe.jpg" alt="Oussama in front of the CSBE-SCGAB 2026 conference banner in Saskatoon" loading="lazy">
+        <video src="conf-csbe.mp4" controls muted playsinline preload="metadata"></video>
+      </div>
+    </article>
+    <article class="item">
+      <h3>New Brunswick Potato Conference &amp; Trade Show</h3>
+      <span class="meta">Dalhousie University booth · 2025 and 2026</span>
+      <p>Showcased our precision spraying work to growers and industry with a live boom demo using individually controlled nozzles.</p>
+      <div class="conf-media">
+        <img src="conf-potato-1.jpg" alt="Dalhousie team at the booth behind a CASE IH spray boom demo" loading="lazy">
+        <img src="conf-potato-2.jpg" alt="Dalhousie team at the potato conference booth" loading="lazy">
+      </div>
+    </article>
   </section>
 
   <section>
