@@ -67,6 +67,13 @@ a.card:hover,a.card:focus-visible{border-color:var(--accent);transform:translate
 h2.sec{margin:28px 0 0;font:800 22px/1.2 var(--display);letter-spacing:0;text-transform:none;color:var(--fg)}
 .fig.wide{margin-top:8px}
 .fig.wide img{aspect-ratio:auto;object-fit:contain}
+.sub{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:10px 0 0}
+.tbl{overflow-x:auto;margin-top:6px;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:14px}
+.tbl th,.tbl td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:color-mix(in srgb,var(--fg) 4%,var(--bg))}
+.tbl td{color:var(--fg)}
+.tbl tr:last-child td{border-bottom:0}
 </style>
 </head>
 <body>
@@ -78,7 +85,7 @@ h2.sec{margin:28px 0 0;font:800 22px/1.2 var(--display);letter-spacing:0;text-tr
     <article class="item" style="border-top:0">
       <h1 class="page-title">See &amp; Spray on a CASE IH commercial sprayer</h1>
       <p>Mounted and commissioned a camera-based spot-spraying system on a CASE IH commercial boom sprayer: cameras, industrial computers, CAN modules and rate-controller hardware across a 60-nozzle boom.</p>
-      <div class="tags"><span>ISOBUS</span><span>CAN bus</span><span>Machine vision</span><span>Raven</span><span>GPS RTK</span><span>OAK-D cameras</span></div>
+      <div class="tags"><span>ISOBUS</span><span>CAN bus</span><span>Machine vision</span><span>Raven</span><span>GPS RTK</span><span>OAK-D cameras</span><span>Nuvo-9160GC IPC</span><span>Ethernet</span><span>Pentair rate controller</span></div>
       <p><strong>Full-system ownership:</strong> took charge of the complete See &amp; Spray experiment, from mounting and wiring the hardware to commissioning the machine vision and rate-control chain, running the field trials and troubleshooting on site.</p>
       <video class="clip" src="see-spray-experiment.mp4" controls muted playsinline preload="metadata"></video>
       <h2 class="sec">System architecture</h2>
@@ -86,6 +93,26 @@ h2.sec{margin:28px 0 0;font:800 22px/1.2 var(--display);letter-spacing:0;text-tr
         <img src="see-spray-architecture.jpg" alt="CASE IH sprayer with a Machine Vision Node on its ISOBUS network linked to a machine vision computer, and OAK-D cameras spaced along the commercial boom above the nozzles" loading="lazy">
         <figcaption><b>Vision on the implement bus.</b> A Machine Vision Node joins the sprayer's existing ISOBUS network (VT, GNSS, task controller and other ECUs) and links to the machine vision computer. OAK-D cameras spaced along the commercial boom each watch a section of nozzles, so weeds are detected and sprayed nozzle by nozzle.</figcaption>
       </figure>
+      <h2 class="sec">Machine vision computing rack</h2>
+      <p>The vision side runs on Neousys Nuvo-9160GC industrial PCs. Each computer takes four HDMI-to-USB capture cards: every card receives the HDMI feed from one camera and passes it to the computer over USB, so one computer handles up to four cameras and eight computers cover up to 32 cameras across the boom. All HDMI cables enter the rack through split cable glands.</p>
+      <p>Each IPC accepts 8–48 V and draws about 280 W. The rack is fed from the sprayer's 12 V supply through a 12 → 24 V step-up converter, cooled by blower fans, and networked through a 16-port router that links the computers to the Machine Vision Node.</p>
+      <figure class="fig wide">
+        <img src="see-spray-network.jpg" alt="Network diagram: Virtual Terminal and Pentair rate controller on the parallel implement bus, MVN with ECU and router bridging to the sprayer implement bus, Ethernet switches to machine vision computers, USB to cameras, CAN switches to nozzles, with photos of each part" loading="lazy">
+        <figcaption><b>Network layout.</b> The Machine Vision Node (ECU + router) bridges the sprayer implement bus and a parallel implement bus shared with the Virtual Terminal and the Pentair rate controller. Ethernet switches fan out to the machine vision computers, each reading its cameras over USB, while CAN switches carry nozzle commands along the boom.</figcaption>
+      </figure>
+      <p class="sub">Hardware used · IPC rack</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Component</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr><td>Industrial computer</td><td>Neousys Nuvo-9160GC, 8–48 V input, ~280 W</td></tr>
+          <tr><td>Step-up converter</td><td>12 V → 24 V</td></tr>
+          <tr><td>IPC rack</td><td>Houses the computers on the sprayer</td></tr>
+          <tr><td>Frame grabbers</td><td>HDMI-to-USB capture cards, 4 per computer</td></tr>
+          <tr><td>Data cables</td><td>USB-C to USB</td></tr>
+          <tr><td>Blower fans</td><td>Rack cooling</td></tr>
+          <tr><td>Router</td><td>16-port, links the computers to the MVN</td></tr>
+        </tbody>
+      </table></div>
       <figure class="field">
         <video src="MicrosoftTeams-video%20(13).mp4" controls muted playsinline loop preload="metadata"></video>
         <figcaption><b>Field office.</b> Sometimes last-minute surprises before an experiment force you to code, debug and troubleshoot right in the field: on top of a sprayer, on a rock… any place can be turned into an office 😅</figcaption>
