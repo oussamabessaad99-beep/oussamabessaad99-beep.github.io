@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field Work &amp; Experiments</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#f3f5f1; --fg:#17201a; --muted:#5a665d; --line:#d5dbd3; --accent:#1f5d3a; --signal:#e8b10c;
+  --display:"Archivo",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121815;--fg:#e6ebe6;--muted:#9aa69e;--line:#2a332d;--accent:#6fc392;--signal:#f2c230;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121815;--fg:#e6ebe6;--muted:#9aa69e;--line:#2a332d;--accent:#6fc392;--signal:#f2c230;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);padding-inline:16px;padding-block:40px}
+.wrap{max-width:760px;margin:0 auto;display:grid;gap:32px}
+.page-title{font:800 clamp(28px,5vw,40px)/1.1 var(--display);margin:0;text-wrap:balance}
+.intro{margin:0;color:var(--muted)}
+.item{border-top:1px solid var(--line);padding-block:20px;display:grid;gap:8px;min-width:0}
+.item h3{font:800 20px var(--display);margin:0}
+.item p{margin:0;color:var(--muted)}
+.item p b{color:var(--fg)}
+.field{display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:16px;align-items:center}
+.field video{width:100%;aspect-ratio:9/16;background:#000;display:block}
+@media (max-width:600px){.field{grid-template-columns:1fr}.field video{max-width:300px}}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.pair img{width:100%;height:320px;object-fit:cover;display:block;border:1px solid var(--line)}
+footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+.back{display:inline-block;color:var(--accent);text-decoration:none;font:500 13px var(--mono);letter-spacing:.06em}
+.back:hover,.back:focus-visible{text-decoration:underline;outline:none}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a class="back" href="./">← Back to portfolio</a>
+  <div>
+    <h1 class="page-title">Field work &amp; experiments</h1>
+    <p class="intro">Most of the work is proven outside the lab: installing and debugging systems on real machines, running trials and collecting data in the field.</p>
+  </div>
+  <section>
+    <article class="item">
+      <h3>Field office</h3>
+      <div class="field">
+        <video src="MicrosoftTeams-video%20(13).mp4" controls muted playsinline loop preload="metadata"></video>
+        <p><b>Field office.</b> Sometimes last-minute surprises before an experiment force you to code, debug and troubleshoot right in the field: on top of a sprayer, on a rock… any place can be turned into an office 😅</p>
+      </div>
+    </article>
+    <article class="item">
+      <h3>Trials with the team</h3>
+      <p>Preparing the sprayer and running field trials with the research team.</p>
+      <div class="pair">
+        <img src="field-team.jpg" alt="Three team members in safety vests on a prepared field" loading="lazy">
+        <img src="field-setup.jpg" alt="Team setting up the sprayer boom in front of a red barn" loading="lazy">
+      </div>
+    </article>
+    <article class="item">
+      <h3>Crop scouting</h3>
+      <p>Scouting potato plots and collecting ground-truth data in the field.</p>
+      <div class="pair">
+        <img src="field-scouting-1.jpg" alt="Kneeling between potato rows checking a marked plant" loading="lazy">
+        <img src="field-scouting-2.jpg" alt="Inspecting a marked potato plant while a colleague takes notes" loading="lazy">
+      </div>
+    </article>
+  </section>
+
+  <footer id="contact">Contact: Oussama.Bessaad@dal.ca · Truro, Nova Scotia</footer>
+</div>
+</body>
+</html>
