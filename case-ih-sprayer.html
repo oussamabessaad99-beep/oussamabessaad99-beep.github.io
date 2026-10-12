@@ -74,8 +74,6 @@ h2.sec{margin:28px 0 0;font:800 22px/1.2 var(--display);letter-spacing:0;text-tr
 .tbl th{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:color-mix(in srgb,var(--fg) 4%,var(--bg))}
 .tbl td{color:var(--fg)}
 .tbl tr:last-child td{border-bottom:0}
-.duo{width:min(1200px,calc(100vw - 32px));margin-left:50%;transform:translateX(-50%);display:grid;grid-template-columns:1.773fr .925fr;gap:12px;margin-top:8px}
-.duo video{width:100%;height:auto;display:block;background:#000}
 </style>
 </head>
 <body>
@@ -89,10 +87,7 @@ h2.sec{margin:28px 0 0;font:800 22px/1.2 var(--display);letter-spacing:0;text-tr
       <p>Mounted and commissioned a camera-based spot-spraying system on a CASE IH commercial boom sprayer: cameras, industrial computers, CAN modules and rate-controller hardware across a 60-nozzle boom.</p>
       <div class="tags"><span>ISOBUS</span><span>CAN bus</span><span>Machine vision</span><span>Raven</span><span>GPS RTK</span><span>OAK-D cameras</span><span>Nuvo-9160GC IPC</span><span>Ethernet</span><span>Pentair rate controller</span><span>C++ multithreading</span><span>TCP/IP</span></div>
       <p><strong>Full-system ownership:</strong> took charge of the complete See &amp; Spray experiment, from mounting and wiring the hardware to commissioning the machine vision and rate-control chain, running the field trials and troubleshooting on site.</p>
-      <div class="duo">
-        <video src="see-spray-experiment.mp4" controls muted playsinline preload="metadata" style="aspect-ratio:720/406"></video>
-        <video src="see-spray-field.mp4" controls muted playsinline preload="metadata" style="aspect-ratio:888/960"></video>
-      </div>
+      <video class="clip" src="see-spray-duo.mp4" controls muted playsinline preload="metadata" style="aspect-ratio:2066/720"></video>
       <h2 class="sec">System architecture</h2>
       <figure class="fig wide">
         <img src="see-spray-architecture.jpg" alt="CASE IH sprayer with a Machine Vision Node on its ISOBUS network linked to a machine vision computer, and OAK-D cameras spaced along the commercial boom above the nozzles" loading="lazy">
