@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conferences &amp; Seminars</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#f3f5f1; --fg:#17201a; --muted:#5a665d; --line:#d5dbd3; --accent:#1f5d3a; --signal:#e8b10c;
+  --display:"Archivo",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121815;--fg:#e6ebe6;--muted:#9aa69e;--line:#2a332d;--accent:#6fc392;--signal:#f2c230;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121815;--fg:#e6ebe6;--muted:#9aa69e;--line:#2a332d;--accent:#6fc392;--signal:#f2c230;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);padding-inline:16px;padding-block:40px}
+.wrap{max-width:760px;margin:0 auto;display:grid;gap:32px}
+.page-title{font:800 clamp(28px,5vw,40px)/1.1 var(--display);margin:0;text-wrap:balance}
+.item{border-top:1px solid var(--line);padding-block:20px;display:grid;gap:6px}
+.item h3{font:800 20px var(--display);margin:0}
+.meta{font:500 13px var(--mono);color:var(--accent)}
+.item p{margin:0;color:var(--muted)}
+.conf-media{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px}
+.conf-media img,.conf-media video{width:100%;height:300px;object-fit:cover;display:block;background:#000;border:1px solid var(--line)}
+.conf-media video{object-fit:contain}
+.conf-media.single{grid-template-columns:minmax(0,320px)}
+footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+.back{display:inline-block;color:var(--accent);text-decoration:none;font:500 13px var(--mono);letter-spacing:.06em}
+.back:hover,.back:focus-visible{text-decoration:underline;outline:none}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a class="back" href="./">← Back to portfolio</a>
+  <h1 class="page-title">Agricultural conferences &amp; seminars</h1>
+  <section>
+    <article class="item">
+      <h3>ASABE Annual International Meeting</h3>
+      <span class="meta">American Society of Agricultural and Biological Engineers · 2025</span>
+      <p>Presented my work on machine vision-based spot spraying for agricultural machinery: camera detections driving individual nozzle control over ISOBUS on a field sprayer.</p>
+      <div class="conf-media single">
+        <img src="conf-asabe.jpg" alt="Oussama presenting a slide on boom sprayers at the ASABE meeting" loading="lazy">
+      </div>
+    </article>
+    <article class="item">
+      <h3>CSBE-SCGAB Annual Technical Conference</h3>
+      <span class="meta">Canadian Society for Bioengineering · Saskatoon, SK · July 2026</span>
+      <p>Presented the latest results of the See &amp; Spray project: machine vision spot spraying and feedback map generation on a commercial sprayer.</p>
+      <div class="conf-media">
+        <img src="conf-csbe.jpg" alt="Oussama in front of the CSBE-SCGAB 2026 conference banner in Saskatoon" loading="lazy">
+        <video src="conf-csbe.mp4" controls muted playsinline preload="metadata"></video>
+      </div>
+    </article>
+    <article class="item">
+      <h3>New Brunswick Potato Conference &amp; Trade Show</h3>
+      <span class="meta">Dalhousie University booth · 2025 and 2026</span>
+      <p>Showcased our precision spraying work to growers and industry with a live boom demo using individually controlled nozzles.</p>
+      <div class="conf-media">
+        <img src="conf-potato-1.jpg" alt="Dalhousie team at the booth behind a CASE IH spray boom demo" loading="lazy">
+        <img src="conf-potato-2.jpg" alt="Dalhousie team at the potato conference booth" loading="lazy">
+      </div>
+    </article>
+  </section>
+
+  <footer id="contact">Contact: Oussama.Bessaad@dal.ca · Truro, Nova Scotia</footer>
+</div>
+</body>
+</html>
