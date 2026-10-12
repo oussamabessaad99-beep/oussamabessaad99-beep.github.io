@@ -113,17 +113,10 @@ h2.sec{margin:28px 0 0;font:800 22px/1.2 var(--display);letter-spacing:0;text-tr
           <tr><td>Router</td><td>16-port, links the computers to the MVN</td></tr>
         </tbody>
       </table></div>
-      <h2 class="sec">Software workflow · Machine Vision Node</h2>
-      <p>Multithreaded C++ program running on the Machine Vision Node, turning detections from the vision computers into nozzle commands on the implement bus.</p>
-      <ul>
-        <li><b>Initialization:</b> memory and CAN bus setup at 250 kbit/s, TCP forwarding socket, then a detection thread, a CAN sender thread and an Ethernet server on port 5000 that accepts the vision clients.</li>
-        <li><b>Queue:</b> incoming protocol messages are size-checked, validated by their start and end braces, pushed to a message queue and forwarded over TCP.</li>
-        <li><b>Thread 1 · detection loop:</b> reads the queue, computes min, max and mid-points of each detection, sets the matching nozzles to 1, and every 50 ms consolidates the nozzle array, validates it, expands it to left and right neighbours and packs it into CAN bytes.</li>
-        <li><b>Thread 2 · CAN sender:</b> builds the CAN IDs and frames for the nozzle pattern and sends them to the implement bus.</li>
-      </ul>
+      <h2 class="sec">Code workflow</h2>
       <figure class="fig wide">
         <img src="see-spray-code-flow.png" alt="Flowchart of the Machine Vision Node program in four lanes: initialization, queue, thread 1 detection loop and thread 2 CAN sender" loading="lazy" style="max-width:720px;margin-inline:auto">
-        <figcaption><b>Code workflow.</b> From TCP detections to CAN frames on the implement bus.</figcaption>
+        <figcaption>Machine Vision Node program: from TCP detections to CAN frames on the implement bus.</figcaption>
       </figure>
       <figure class="field">
         <video src="MicrosoftTeams-video%20(13).mp4" controls muted playsinline loop preload="metadata"></video>
