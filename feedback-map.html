@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feedback Map Generation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: single column, header band, projects, experience timeline, skills grid */
+:root{
+  --bg:#f3f5f1; --fg:#17201a; --muted:#5a665d; --line:#d5dbd3; --accent:#1f5d3a; --signal:#e8b10c;
+  --display:"Archivo",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121815;--fg:#e6ebe6;--muted:#9aa69e;--line:#2a332d;--accent:#6fc392;--signal:#f2c230;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121815;--fg:#e6ebe6;--muted:#9aa69e;--line:#2a332d;--accent:#6fc392;--signal:#f2c230;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);padding-inline:16px;padding-block:40px}
+.wrap{max-width:760px;margin:0 auto;display:grid;gap:44px}
+h2{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.item{border-top:1px solid var(--line);padding-block:20px;display:grid;gap:6px}
+.item p,.item li{margin:0;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.tags span{font:500 12px var(--mono);background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);padding:2px 8px}
+.fig{margin:0;display:grid;gap:6px;min-width:0}
+.fig img{width:100%;max-width:100%;aspect-ratio:4/3;object-fit:contain;display:block;background:#fff;border:1px solid var(--line)}
+.fig figcaption{font-size:14px;color:var(--muted)}
+.fig b{color:var(--fg)}
+footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+.back{display:inline-block;color:var(--accent);text-decoration:none;font:500 13px var(--mono);letter-spacing:.06em}
+.back:hover,.back:focus-visible{text-decoration:underline;outline:none}
+.page-title{font:800 clamp(28px,5vw,40px)/1.1 var(--display)!important;margin:0;text-wrap:balance}
+h2.sec{margin:28px 0 0;font:800 22px/1.2 var(--display);letter-spacing:0;text-transform:none;color:var(--fg)}
+.fig.wide{margin-top:8px}
+.fig.wide img{aspect-ratio:auto;object-fit:contain}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a class="back" href="./">← Back to portfolio</a>
+
+  <section>
+    <article class="item" style="border-top:0">
+      <h1 class="page-title">Feedback map generation</h1>
+      <p>Turned spraying activity into georeferenced feedback maps: each nozzle activation is tagged with its GPS RTK position and plotted over the field boundary, so the map shows exactly where product was applied.</p>
+      <div class="tags"><span>GPS RTK</span><span>As-applied maps</span><span>GIS</span><span>Precision spraying</span></div>
+      <figure class="fig wide">
+        <img src="feedback-map.jpg" alt="Satellite view of a field outlined in yellow, filled green with red cells where nozzles sprayed" loading="lazy" style="max-width:560px;margin-inline:auto">
+        <figcaption><b>Feedback map.</b> Field boundary in yellow; red cells mark where nozzles sprayed, green where they stayed off.</figcaption>
+      </figure>
+    </article>
+  </section>
+
+  <footer id="contact">Contact: Oussama.Bessaad@dal.ca · Truro, Nova Scotia</footer>
+</div>
+</body>
+</html>
