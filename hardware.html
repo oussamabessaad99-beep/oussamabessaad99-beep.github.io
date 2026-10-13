@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardware Prototyping &amp; Integration</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#f3f5f1; --fg:#17201a; --muted:#5a665d; --line:#d5dbd3; --accent:#1f5d3a; --signal:#e8b10c;
+  --display:"Archivo",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121815;--fg:#e6ebe6;--muted:#9aa69e;--line:#2a332d;--accent:#6fc392;--signal:#f2c230;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121815;--fg:#e6ebe6;--muted:#9aa69e;--line:#2a332d;--accent:#6fc392;--signal:#f2c230;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);padding-inline:16px;padding-block:40px}
+.wrap{max-width:760px;margin:0 auto;display:grid;gap:32px}
+.page-title{font:800 clamp(28px,5vw,40px)/1.1 var(--display);margin:0;text-wrap:balance}
+.intro{margin:8px 0 0;color:var(--muted)}
+.item{border-top:1px solid var(--line);padding-block:20px;display:grid;gap:8px;min-width:0}
+.item h3{font:800 20px var(--display);margin:0}
+.item p{margin:0;color:var(--muted)}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;align-items:start}
+.pair img{width:100%;height:auto;display:block;border:1px solid var(--line);background:#fff}
+footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+.back{display:inline-block;color:var(--accent);text-decoration:none;font:500 13px var(--mono);letter-spacing:.06em}
+.back:hover,.back:focus-visible{text-decoration:underline;outline:none}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a class="back" href="./">← Back to portfolio</a>
+  <div>
+    <h1 class="page-title">Hardware prototyping &amp; integration</h1>
+    <p class="intro">Designing and building the physical side of the systems: parts and brackets, drilling and mounting, soldering and wiring, and integrating everything on the machine.</p>
+  </div>
+  <section>
+    <article class="item">
+      <h3>Mounting nozzle sections</h3>
+      <p>Laid out and drilled new mounting holes on the boom frame, then fitted the nozzle section with brackets and clamps on the UTV sprayer.</p>
+      <div class="pair">
+        <img src="hw-mount-holes.jpg" alt="Boom frame with existing holes and the positions of new holes to drill marked in green" loading="lazy">
+        <img src="hw-mount-boom.jpg" alt="Nozzle section pipe mounted with black clamps on the blue boom frame" loading="lazy">
+      </div>
+    </article>
+  </section>
+
+  <footer id="contact">Contact: Oussama.Bessaad@dal.ca · Truro, Nova Scotia</footer>
+</div>
+</body>
+</html>
