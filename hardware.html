@@ -39,6 +39,8 @@ footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddin
 .field figcaption{font-size:15px;color:var(--muted)}
 .field b{color:var(--fg)}
 @media (max-width:600px){.field{grid-template-columns:1fr}.field video{max-width:300px}.fstep figcaption{font-size:12px}}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,260px));gap:12px;margin-top:4px}
+.vids video{width:100%;aspect-ratio:9/16;background:#000;display:block}
 </style>
 </head>
 <body>
@@ -72,11 +74,12 @@ footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddin
       </div>
     </article>
     <article class="item">
-      <h3>Pre-deployment simulations</h3>
-      <figure class="field">
+      <h3>Testing &amp; simulation</h3>
+      <p>Every new version is bench-tested and run through simulations in the office before deployment, so detections, ECU logic and nozzle actuation are validated before the sprayer goes out.</p>
+      <div class="vids">
         <video src="see-spray-simulation.mp4" controls muted playsinline loop preload="metadata"></video>
-        <figcaption><b>Simulation before the field.</b> Every new version of the system is run through simulations in the office before deployment, so detections, ECU logic and nozzle actuation are validated before the sprayer goes out.</figcaption>
-      </figure>
+        <video src="hw-testing.mp4" controls muted playsinline loop preload="metadata"></video>
+      </div>
     </article>
   </section>
 
