@@ -68,19 +68,21 @@ a.card:hover,a.card:focus-visible{border-color:var(--accent);transform:translate
 .conf-media img,.conf-media video{width:100%;height:300px;object-fit:cover;display:block;background:#000;border:1px solid var(--line)}
 .conf-media video{object-fit:contain}
 .conf-media.single{grid-template-columns:minmax(0,320px)}
+.hero{display:flex;align-items:center;gap:20px}
+.hero img{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid var(--line);flex:none}
+@media (max-width:480px){.hero img{width:84px;height:84px}}
 </style>
 </head>
 <body>
 
 <div class="wrap">
   <header>
-    <h1>Oussama Bessaad<span></span></h1>
+    <div class="hero"><img src="headshot.jpg" alt="Oussama Bessaad"><h1>Oussama Bessaad<span></span></h1></div>
     <p class="role">Mechatronics Engineer · Agricultural Machinery &amp; Precision Agriculture</p>
     <p class="intro">I work at the intersection of mechatronics and agricultural machinery: integrating sensors and actuators, building ECUs and their embedded software, connecting tractors and implements over ISOBUS / CAN, and designing the mechanical parts and enclosures that hold it all together. Everything I build gets mounted, wired and tested on real equipment in the field.</p>
     <div class="links">
-      <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="#contact">Resume (PDF)</a>
+      <a href="ielts-c1.pdf" target="_blank" rel="noopener">English proficiency · IELTS C1 (PDF)</a>
+      <a href="diploma.pdf" target="_blank" rel="noopener">Degree (PDF)</a>
     </div>
   </header>
 
