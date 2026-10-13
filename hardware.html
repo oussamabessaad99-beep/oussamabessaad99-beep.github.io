@@ -24,14 +24,17 @@ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);pad
 footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
 .back{display:inline-block;color:var(--accent);text-decoration:none;font:500 13px var(--mono);letter-spacing:.06em}
 .back:hover,.back:focus-visible{text-decoration:underline;outline:none}
-.flow{display:grid;gap:0;margin-top:8px}
-.step{display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:18px;align-items:center}
-.step img{width:100%;height:210px;object-fit:cover;display:block;border:1px solid var(--line);background:#fff}
-.step .n{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-.step h4{font:800 17px var(--display);margin:2px 0 4px}
-.step p{margin:0;color:var(--muted);font-size:15px}
-.arrow{width:260px;text-align:center;color:var(--accent);font-size:26px;line-height:1;padding:8px 0}
-@media (max-width:600px){.step{grid-template-columns:1fr}.arrow{width:100%}}
+.flow{display:grid;gap:6px;margin-top:8px}
+.frow{display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr;align-items:center;gap:4px}
+.fstep{margin:0;display:grid;gap:4px;min-width:0}
+.fstep img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid var(--line);background:#fff}
+.fstep figcaption{font-size:13px;color:var(--muted);line-height:1.35}
+.fstep b{display:block;font:800 14px var(--display);color:var(--fg)}
+.fstep .n{font:500 11px var(--mono);color:var(--accent);letter-spacing:.06em}
+.farr{color:var(--accent);font-size:22px;text-align:center;line-height:1}
+.fdown{display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr;color:var(--accent);font-size:22px;line-height:1}
+.fdown span{text-align:center}
+@media (max-width:600px){.fstep figcaption{font-size:12px}.farr,.fdown{font-size:16px}}
 </style>
 </head>
 <body>
@@ -55,21 +58,11 @@ footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddin
       <h3>Camera box: from design to the sprayer</h3>
       <p>Designing, printing, assembling, wiring and mounting the camera boxes used on the boom.</p>
       <div class="flow">
-        <div class="step"><img src="hw-flow-1.jpg" alt="CAD model of the enclosure insert" loading="lazy"><div><span class="n">Step 1</span><h4>Design</h4><p>Enclosure insert modeled in CAD to hold every component in a fixed position.</p></div></div>
-        <div class="arrow" aria-hidden="true">↓</div>
-        <div class="step"><img src="hw-flow-2.jpg" alt="3D-printed grey insert with red 3M tape" loading="lazy"><div><span class="n">Step 2</span><h4>3D printing</h4><p>Insert printed and lined with 3M VHB tape to lock the components in place.</p></div></div>
-        <div class="arrow" aria-hidden="true">↓</div>
-        <div class="step"><img src="hw-flow-3.jpg" alt="White enclosure with cut openings" loading="lazy"><div><span class="n">Step 3</span><h4>Enclosure machining</h4><p>Openings cut in the weatherproof box for the camera, connectors and cabling.</p></div></div>
-        <div class="arrow" aria-hidden="true">↓</div>
-        <div class="step"><img src="hw-flow-4.jpg" alt="Components seated in the printed insert" loading="lazy"><div><span class="n">Step 4</span><h4>Component assembly</h4><p>Camera, Actuonix linear actuator, fan and terminal blocks fitted into the insert.</p></div></div>
-        <div class="arrow" aria-hidden="true">↓</div>
-        <div class="step"><img src="hw-flow-5.jpg" alt="Wired camera box with a grey Deutsch connector" loading="lazy"><div><span class="n">Step 5</span><h4>Wiring &amp; soldering</h4><p>Power and signal wiring soldered and routed out through a sealed Deutsch connector.</p></div></div>
-        <div class="arrow" aria-hidden="true">↓</div>
-        <div class="step"><img src="hw-flow-6.jpg" alt="Camera box bolted to steel brackets on the frame" loading="lazy"><div><span class="n">Step 6</span><h4>Bracket fabrication</h4><p>Steel brackets drilled and bolted to clamp the box onto the boom frame.</p></div></div>
-        <div class="arrow" aria-hidden="true">↓</div>
-        <div class="step"><img src="hw-flow-7.jpg" alt="Camera box mounted under the boom" loading="lazy"><div><span class="n">Step 7</span><h4>Mounting on the boom</h4><p>Box hung under the boom, with the camera facing down at the crop.</p></div></div>
-        <div class="arrow" aria-hidden="true">↓</div>
-        <div class="step"><img src="hw-flow-8.jpg" alt="Camera box installed on the red commercial sprayer boom" loading="lazy"><div><span class="n">Step 8</span><h4>On the sprayer</h4><p>Final installation on the commercial sprayer, ready for field trials.</p></div></div>
+        <div class="frow"><figure class="fstep"><img src="hw-flow-1.jpg" alt="CAD model of the enclosure insert" loading="lazy"><figcaption><span class="n">STEP 1</span><b>Design</b>Enclosure insert modeled in CAD.</figcaption></figure><span class="farr" aria-hidden="true">→</span><figure class="fstep"><img src="hw-flow-2.jpg" alt="3D-printed grey insert with red 3M tape" loading="lazy"><figcaption><span class="n">STEP 2</span><b>3D printing</b>Insert printed and lined with 3M VHB tape.</figcaption></figure><span class="farr" aria-hidden="true">→</span><figure class="fstep"><img src="hw-flow-3.jpg" alt="White enclosure with cut openings" loading="lazy"><figcaption><span class="n">STEP 3</span><b>Enclosure machining</b>Openings cut for camera, connectors and cables.</figcaption></figure></div>
+        <div class="fdown" aria-hidden="true"><span></span><span></span><span></span><span></span><span>↓</span></div>
+        <div class="frow"><figure class="fstep"><img src="hw-flow-6.jpg" alt="Camera box bolted to steel brackets" loading="lazy"><figcaption><span class="n">STEP 6</span><b>Bracket fabrication</b>Steel brackets drilled and bolted to the frame.</figcaption></figure><span class="farr" aria-hidden="true">←</span><figure class="fstep"><img src="hw-flow-5.jpg" alt="Wired camera box with a Deutsch connector" loading="lazy"><figcaption><span class="n">STEP 5</span><b>Wiring &amp; soldering</b>Wiring soldered and routed to a sealed Deutsch connector.</figcaption></figure><span class="farr" aria-hidden="true">←</span><figure class="fstep"><img src="hw-flow-4.jpg" alt="Components seated in the printed insert" loading="lazy"><figcaption><span class="n">STEP 4</span><b>Component assembly</b>Camera, Actuonix actuator, fan and terminal blocks fitted.</figcaption></figure></div>
+        <div class="fdown" aria-hidden="true"><span>↓</span><span></span><span></span><span></span><span></span></div>
+        <div class="frow"><figure class="fstep"><img src="hw-flow-7.jpg" alt="Camera box mounted under the boom" loading="lazy"><figcaption><span class="n">STEP 7</span><b>Mounting on the boom</b>Box hung under the boom, camera facing the crop.</figcaption></figure><span class="farr" aria-hidden="true">→</span><figure class="fstep"><img src="hw-flow-8.jpg" alt="Camera box installed on the sprayer boom" loading="lazy"><figcaption><span class="n">STEP 8</span><b>On the sprayer</b>Installed on the commercial sprayer, ready for trials.</figcaption></figure><span></span><span></span></div>
       </div>
     </article>
   </section>
