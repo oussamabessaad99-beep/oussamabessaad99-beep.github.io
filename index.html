@@ -73,6 +73,9 @@ a.card:hover,a.card:focus-visible{border-color:var(--accent);transform:translate
 @media (max-width:480px){.hero img{width:84px;height:84px}}
 .skills-line{margin:10px 0 0;font:500 14px var(--mono);color:var(--fg)}
 .skills-line b{color:var(--accent);font-weight:500}
+.showreel{margin:0;display:grid;gap:8px}
+.showreel video{width:100%;aspect-ratio:1280/572;display:block;background:#000;border:1px solid var(--line)}
+.showreel figcaption{font-size:14px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -88,6 +91,11 @@ a.card:hover,a.card:focus-visible{border-color:var(--accent);transform:translate
       <a href="diploma.pdf" target="_blank" rel="noopener">Degree (PDF)</a>
     </div>
   </header>
+
+  <figure class="showreel">
+    <video src="demo-boom.mp4" autoplay muted loop playsinline controls preload="auto"></video>
+    <figcaption>Machine vision spot application on a demo boom sprayer.</figcaption>
+  </figure>
 
   <section>
     <h2>Projects</h2>
